@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Squire({value}) {
+function Squire() {
+
+  const [value,setValue] = useState(null);
+
+  const handleClick = () => {
+    setValue("x")
+  }
+
   return (
-    <button className="border bg-white h-12 w-12 text-lg border-gray-400 m-1 leading-9">
+    <button onClick={handleClick} className="border bg-white h-12 w-12 text-lg border-gray-400 m-1 leading-9">
       {value}
     </button>
   );
@@ -11,22 +18,22 @@ function Squire({value}) {
 const Board = () => {
   return (
     <>
-      <div>
-        <Squire value={1}/>
-        <Squire value={2}/>
-        <Squire value={3}/>
+      <div className="flex">
+        <Squire/>
+        <Squire/>
+        <Squire/>
       </div>
 
-      <div>
-        <Squire value={4}/>
-        <Squire value={5}/>
-        <Squire value={6}/>
+      <div className="flex">
+        <Squire/>
+        <Squire/>
+        <Squire/>
       </div>
 
-      <div>
-        <Squire value={7}/>
-        <Squire value={8}/>
-        <Squire value={9}/>
+      <div className="flex">
+        <Squire/>
+        <Squire/>
+        <Squire/>
       </div>
     </>
   );
